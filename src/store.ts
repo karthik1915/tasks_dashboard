@@ -5,12 +5,14 @@ import {
   MicState,
   RouteState,
   SpeakerState,
+  TaskState,
   ThemeState,
 } from "./redux/constants";
 import { micSlice } from "./redux/reducers/micReducer";
 import { speakerSlice } from "./redux/reducers/speakerReducer";
 import { loggedSlice } from "./redux/reducers/loginReducer";
 import { routeSlice } from "./redux/reducers/routeReducer";
+import { tasksSlice } from "./redux/tasks/taskReducer";
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +21,7 @@ export const store = configureStore({
     speaker: speakerSlice.reducer as Reducer<SpeakerState>,
     login: loggedSlice.reducer as Reducer<LoginState>,
     route: routeSlice.reducer as Reducer<RouteState>,
+    task: tasksSlice.reducer as Reducer<TaskState>,
   },
 });
 

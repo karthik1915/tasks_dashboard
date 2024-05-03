@@ -1,9 +1,9 @@
 import React from "react";
 import Activity from "../components/activity";
 import ProjectsOverview from "../components/projectsOverview";
-import Remainders from "../components/Remainders";
+import Remainders from "../components/remainder";
 
-const SidePanel: React.FC = () => {
+export const DashboardSidePanel: React.FC = () => {
   return (
     <div className="">
       <Activity />
@@ -13,4 +13,4 @@ const SidePanel: React.FC = () => {
   );
 };
 
-export default SidePanel;
+export default DashboardSidePanel;

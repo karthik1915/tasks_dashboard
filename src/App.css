@@ -1,13 +1,13 @@
 .container {
   display: grid;
   grid-template-rows: 64px 1fr; /* Top nav bar height + remaining space */
-  grid-template-columns: 72px 1fr 360px; /* Sidebar width + remaining space */
+  grid-template-columns: 72px 1fr; /* Sidebar width + remaining space */
   height: 100vh; /* Adjust as needed */
 }
 
 .topbar {
   grid-row: 1;
-  grid-column: 2 / span 2; /* Spanning across columns */
+  grid-column: 2;
 }
 
 .sidebar {
@@ -19,6 +19,8 @@
   grid-row: 2;
   grid-column: 2;
   overflow-x: scroll;
+  display: grid; /* Add grid layout for main content */
+  grid-template-columns: 1fr 360px;
 }
 
 .maincontent::-webkit-scrollbar {
@@ -26,8 +28,7 @@
 }
 
 .sidepanel {
-  grid-row: 2;
-  grid-column: 3;
+  grid-column: 2;
 }
 
 .purple {
@@ -40,8 +41,7 @@
   }
 
   .maincontent {
-    grid-row: 2;
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .sidepanel {
@@ -83,4 +83,10 @@
 
 .grey-dark {
   background-color: rgb(17, 24, 39);
+}
+
+.sidepanel-size {
+  width: 400px;
+  height: calc(100% - 100px);
+  z-index: 2;
 }

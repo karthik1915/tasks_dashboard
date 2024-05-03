@@ -9,7 +9,6 @@ import Tasks from "./pages/tasks/tasks";
 import Schedule from "./pages/schedule/schedule";
 import SideBar from "./panels/sidebar";
 import Dashboard from "./pages/Dashboard";
-import SidePanel from "./panels/sidepanel/sidepanel";
 
 function App(): JSX.Element {
   const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
@@ -18,8 +17,8 @@ function App(): JSX.Element {
     dispatch(toggleTheme());
   };
 
+  const currentTab = useAppSelector((state) => state.route.route);
   const Tab = (): React.ReactNode => {
-    const currentTab = useAppSelector((state) => state.route.route);
     switch (currentTab) {
       case "tasks":
         return <Tasks />;
@@ -70,10 +69,6 @@ function App(): JSX.Element {
 
       <div className={`maincontent `}>
         <Tab />
-      </div>
-
-      <div className="sidepanel border-l border-slate-700">
-        <SidePanel />
       </div>
     </div>
   );

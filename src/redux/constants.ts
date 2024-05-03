@@ -1,3 +1,5 @@
+import { TaskProps } from "../pages/tasks/tasks";
+
 export interface ThemeState {
   isDarkMode: boolean;
 }
@@ -15,4 +17,9 @@ export interface LoginState {
 
 export interface RouteState {
   route: "dashboard" | "tasks" | "schedule";
+}
+
+export interface TaskState {
+  tasks: TaskProps[];
+  editingTaskId: number | null;
 }
